@@ -223,15 +223,13 @@ public class CrTTweaker implements ITweaker {
                     Runnable runnable = module.getMain();
                     if(runnable != null)
                         runnable.run();
-                    
-                    
                 } catch(Throwable ex) {
                     CraftTweakerAPI.logError("[" + loaderName + "]: Error executing " + scriptFile + ": " + ex.getMessage(), ex);
                 }
                 
                 if(!isLinter)
                     CRT_LOADING_SCRIPT_POST_EVENT_LIST.publish(new CrTLoadingScriptEventPost(filename));
-                //CraftTweakerAPI.logDefault("Completed file: " + filename +" in: " + (System.currentTimeMillis() - time) + "ms");
+                CraftTweakerAPI.logDefault("Completed file: " + filename +" in: " + (System.currentTimeMillis() - totalTime) + "ms");
             }
             
         }

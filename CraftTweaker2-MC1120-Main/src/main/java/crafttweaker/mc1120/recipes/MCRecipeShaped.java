@@ -332,7 +332,7 @@ public class MCRecipeShaped extends MCRecipeBase implements IShapedRecipe {
         commandString.append(hidden ? "Hidden" : "");
         commandString.append("Shaped(\"");
         commandString.append(this.getName()).append("\", ");
-        commandString.append(this.output.toString()).append(", [");
+        commandString.append(this.output == null ? "null" : this.output.toString()).append(", [");
         if(height > 0 && width > 0) {
             for(int row = 0; row < height; row++) {
                 commandString.append("[");

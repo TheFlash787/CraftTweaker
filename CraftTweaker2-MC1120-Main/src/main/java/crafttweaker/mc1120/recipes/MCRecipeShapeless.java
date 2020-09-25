@@ -152,7 +152,7 @@ public class MCRecipeShapeless extends MCRecipeBase implements IRecipe {
         commandString.append(hidden ? "Hidden" : "");
         commandString.append("Shapeless(\"");
         commandString.append(this.getName()).append("\", ");
-        commandString.append(this.output.toString()).append(", [");
+        commandString.append(this.output == null ? "null" : this.output.toString()).append(", [");
         if(ingredients.length > 0) {
             for(IIngredient ingredient : ingredients) {
                 commandString.append(ingredient.toCommandString()).append(", ");
